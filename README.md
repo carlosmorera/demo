@@ -14,16 +14,16 @@
 # Enter to docker container
 - docker exec -it demo psql -U postgres
 
-## Create BD
+# Create BD
 - CREATE DATABASE demo;
 
-## Create super user
+# Create super user
 - CREATE ROLE demo WITH SUPERUSER CREATEDB CREATEROLE LOGIN ENCRYPTED PASSWORD 'demo';
 
-## Enter to DB demo
+# Enter to DB demo
 - \c demo
 
-## Create table
+# Create table
 -
 CREATE TABLE PERSON
 (

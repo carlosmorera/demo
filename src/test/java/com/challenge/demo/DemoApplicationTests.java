@@ -3,7 +3,9 @@ package com.challenge.demo;
 import com.challenge.demo.apirest.entity.Person;
 import com.challenge.demo.apirest.service.PersonService;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -14,7 +16,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-@SpringBootTest
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = DemoApplication.class)
 class DemoApplicationTests {
 
     @Test

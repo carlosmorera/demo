@@ -17,12 +17,12 @@ public class PersonRestController {
     @Autowired
     private PersonService personService;
 
-    //http://127.0.0.1:8080/api/people
+    // http://127.0.0.1:8080/api/people
     @GetMapping("/people")
     public List<Person> findAll() {
         return personService.findAll();
     }
-    //http://127.0.0.1:8080/api/people/id
+    // http://127.0.0.1:8080/api/people/id
     @GetMapping("/people/{personId}")
     public Person getPerson(@PathVariable int personId) {
         Person person = personService.findById(personId);

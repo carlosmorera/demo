@@ -3,32 +3,36 @@
 # Docker Commands
 
 ## move to directory docker
--cd docker
+- cd docker
 
 ## create docker image
--docker build -t demo .
+- docker build -t postgres .
 
 ## run the command
-- docker run --name demo  -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e PGDATA=/var/lib/postgresql/data/pgdata  -v /custom/mount:/var/lib/postgresql/data -d demo
+- docker run --name postgres  -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e PGDATA=/var/lib/postgresql/data/pgdata  -v /custom/mount:/var/lib/postgresql/data -d postgres
 
 ## Enter to docker container
-- docker exec -it demo psql -U postgres
+- docker exec -it postgres psql -U postgres
 
 ## Create BD
-- CREATE DATABASE demo;
+- CREATE DATABASE postgres;
 
 ## Create super user
-- CREATE ROLE demo WITH SUPERUSER CREATEDB CREATEROLE LOGIN ENCRYPTED PASSWORD 'demo';
+- CREATE ROLE postgres WITH SUPERUSER CREATEDB CREATEROLE LOGIN ENCRYPTED PASSWORD 'postgres';
 
-## Enter to DB demo
-- \c demo
+## Enter to DB postgres
+- \c postgres
 
 ## Create table
--
-CREATE TABLE PERSON
+
+- CREATE TABLE PERSON
 (
     id        INTEGER NOT NULL,
     full_name  TEXT,
     birth     TIMESTAMP,
     CONSTRAINT user_pk PRIMARY KEY (id)
 );
+
+## Run project
+
+-  mvn spring-boot:run 

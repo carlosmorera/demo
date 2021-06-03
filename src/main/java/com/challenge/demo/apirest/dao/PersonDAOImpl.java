@@ -1,8 +1,5 @@
 package com.challenge.demo.apirest.dao;
 
-
-
-
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -43,12 +40,6 @@ public class PersonDAOImpl implements PersonDAO{
     @Override
     @Transactional
     public void save(Person person) {
-        System.out.println("-------------");
-        System.out.println("-------------");
-        System.out.println(person.getId());
-        System.out.println(person.fullName);
-        System.out.println(person.birth);
-        System.out.println("-------------");
         Session currentSession = entityManager.unwrap(Session.class);
         currentSession.save(person);
 
